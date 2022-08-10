@@ -8,22 +8,18 @@ no_of_fishes = random.randint(6,16)
 whitebg_ht = 2830
 whitebg_width = 4244
 
-min_height = whitebg_ht // 10
-max_height = whitebg_ht // 5
+min_height = whitebg_ht // 5
+max_height = whitebg_ht // 4
 
-min_width = whitebg_width // 10
-max_width = whitebg_width // 5
+min_width = whitebg_width // 5
+max_width = whitebg_width // 4
 
 images = []
 for i in range(no_of_fishes):
-    im = random.choice(os.listdir(r"C:\Users\mahes\Desktop\sih\dataset"))
-    #path1 = os.path.normpath("my_path/this_way")
-    im = r"C:\Users\mahes\Desktop\sih\dataset/"+im
-    # print(im)
-    # im="1.png"
+    im = random.choice(os.listdir(r"C:\Users\mahes\Desktop\sih\SIH-2022\dataset"))
+    im = r"C:\Users\mahes\Desktop\sih\SIH-2022\dataset/"+im
     img = Image.open(im)
     images.append(img)
-#print(images)
 
 #resizing 
 for i in range(no_of_fishes):
@@ -40,6 +36,9 @@ for i in range(no_of_fishes):
 
 
 white_img = Image.open("whitebg.jpg")
-white_img.paste(images[0],(4244//2,2830//2))
 
-white_img.save("5.png")
+#selecting area randomly to paste fishes
+
+#white_img.paste(images[0],(4244//2,2830//2))
+
+#white_img.save("5.png")
