@@ -41,9 +41,9 @@ white_img = Image.open("whitebg.jpg")
 #selecting area randomly to paste fishes
 for i in range(no_of_fishes):
     random_width_min = (whitebg_width//2) - (whitebg_width//4)
-    random_width_max = (whitebg_width//2) + (whitebg_width//4)
+    random_width_max = (whitebg_width//2) + (whitebg_width//3)
     random_height_min = (whitebg_ht//2) - (whitebg_ht//4)
-    random_height_max = (whitebg_ht//2) + (whitebg_ht//4)
+    random_height_max = (whitebg_ht//2) + (whitebg_ht//3)
     random_width = random.randint(random_width_min,random_width_max)
     random_height = random.randint(random_height_min, random_height_max)
     white_img.paste(images[i],(random_width,random_height))
