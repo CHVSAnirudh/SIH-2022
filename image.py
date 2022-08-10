@@ -30,15 +30,24 @@ for i in range(no_of_fishes):
     #print(images[i].size)
 
 #rotating
-angle = random.randint(0,361)
+
 for i in range(no_of_fishes):
+    angle = random.randint(0,361)
     images[i] = images[i].rotate(angle)
 
 
 white_img = Image.open("whitebg.jpg")
 
 #selecting area randomly to paste fishes
+for i in range(no_of_fishes):
+    random_width_min = (whitebg_width//2) - (whitebg_width//4)
+    random_width_max = (whitebg_width//2) + (whitebg_width//4)
+    random_height_min = (whitebg_ht//2) - (whitebg_ht//4)
+    random_height_max = (whitebg_ht//2) + (whitebg_ht//4)
+    random_width = random.randint(random_width_min,random_width_max)
+    random_height = random.randint(random_height_min, random_height_max)
+    white_img.paste(images[i],(random_width,random_height))
 
 #white_img.paste(images[0],(4244//2,2830//2))
 
-#white_img.save("5.png")
+white_img.save("5.png")
