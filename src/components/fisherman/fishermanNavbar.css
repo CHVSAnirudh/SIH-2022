@@ -1,0 +1,22 @@
+.fishermanNavbar{
+    width:6vw;
+    height:100vh;
+    position:fixed;
+    background-color: rgba(204, 204, 204, 0.4);
+}
+
+.navbarItem{
+    width:35%;
+    margin:50px auto;
+}
+
+.navbarItem img{
+    width:100%;
+    opacity: 0.3;
+    transition: 0.4s;
+}
+
+.navbarItem img:hover{
+    opacity: 1;
+}
+
