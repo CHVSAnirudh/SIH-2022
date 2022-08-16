@@ -1,5 +1,0 @@
-train: ../data/train/images
-val: ../data/test/images
-
-nc: 3
-names: ['catla','Mori','Rohu']
