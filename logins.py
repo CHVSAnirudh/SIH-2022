@@ -13,13 +13,14 @@ def fisherman_login(obj):
         passwords.append(record["password"])
 
     if obj["username"] not in usernames:
-        return "Username does not exist"
+        return {"Message":"Username does not exist", "Status": "402", "login": False}
     else:
         ind = usernames.find(obj["username"])
         if(passwords[ind] == obj["password"]):
-            return "Login Successful"
+            return {"Message":"Login Successful", "Status": "402", "login":True }
         else:
-            return "Passwords do not match"
+            return {"Message":"Passwords do not match", "Status": "402", "login": False}
+
     
 
 def weighbridge_login(obj):
@@ -33,13 +34,13 @@ def weighbridge_login(obj):
         usernames.append(record["username"])
         passwords.append(record["password"])
     if obj["username"] not in usernames:
-        return "Username does not exist"
+        return {"Message":"Username does not exist", "Status": "402", "login": False}
     else:
         ind = usernames.find(obj["username"])
         if(passwords[ind] == obj["password"]):
-            return "Login Successful"
+            return {"Message":"Login Successful", "Status": "402", "login":True }
         else:
-            return "Passwords do not match"
+            return {"Message":"Passwords do not match", "Status": "402", "login": False}
 
 def govt_login(obj):
     client = MongoClient("mongodb+srv://test:test@cluster0.zppnq.mongodb.net/debuggers?retryWrites=true&w=majority")
@@ -52,12 +53,13 @@ def govt_login(obj):
         usernames.append(record["username"])
         passwords.append(record["password"])
     if obj["username"] not in usernames:
-        return "Username does not exist"
+        return {"Message":"Username does not exist", "Status": "402", "login": False}
     else:
         ind = usernames.find(obj["username"])
         if(passwords[ind] == obj["password"]):
-            return "Login Successful"
+            return {"Message":"Login Successful", "Status": "402", "login":True }
         else:
-            return "Passwords do not match"
+            return {"Message":"Passwords do not match", "Status": "402", "login": False}
+
 
 print(fisherman_login())
