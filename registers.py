@@ -23,3 +23,4 @@ def govt_register(obj):
     #records = list(records.find())
     records.insert_one(obj)
     return {"Message":"Govt login added", "Status":"200"}
+

@@ -3,7 +3,7 @@ from bson.binary import Binary
 from requests.utils import DEFAULT_CA_BUNDLE_PATH 
 import os
 import glob
-
+import json
 def predict_image(image,weight):
     # passing the image to model
 
@@ -23,7 +23,7 @@ def predict_image(image,weight):
     rohu = 0
     mori = 0
     #for x in img:
-    os.system("python detect.py --weights ./runs/train/exp9/weights/best.pt --source {} --conf 0.1 --save-txt".format(image))#img should be replaced
+    os.system("python detect.py --weights ./runs/train/exp9/weights/best.pt --source {} --conf 0.2 --save-txt".format(image))  #img should be replaced
     exp = glob.glob('./runs/detect/*/')
     print(exp)
     exp.remove('./runs/detect/exp/')
@@ -55,5 +55,8 @@ def catch_dbupdate(obj):
     db = client.get_database('SIH')
     records = db.catch_data
     #records = list(records.find())
-    records.insert_one(obj)
+    record = records.find_one(obj.get('username'))
+    record = json.loads(record)
+    record['catch'].append(obj.get('catch'))
+    records.update_one({'username':obj.get('username')},{'$set':record})
     return {"Message":"Catch result added into database successfully", "Status":"200"}

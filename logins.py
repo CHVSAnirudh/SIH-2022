@@ -15,7 +15,7 @@ def fisherman_login(obj):
     if obj["username"] not in usernames:
         return {"Message":"Username does not exist", "Status": "402", "login": False}
     else:
-        ind = usernames.find(obj["username"])
+        ind = usernames.index(obj["username"])
         if(passwords[ind] == obj["password"]):
             return {"Message":"Login Successful", "Status": "402", "login":True }
         else:
@@ -36,7 +36,7 @@ def weighbridge_login(obj):
     if obj["username"] not in usernames:
         return {"Message":"Username does not exist", "Status": "402", "login": False}
     else:
-        ind = usernames.find(obj["username"])
+        ind = usernames.index(obj["username"])
         if(passwords[ind] == obj["password"]):
             return {"Message":"Login Successful", "Status": "402", "login":True }
         else:
@@ -55,7 +55,7 @@ def govt_login(obj):
     if obj["username"] not in usernames:
         return {"Message":"Username does not exist", "Status": "402", "login": False}
     else:
-        ind = usernames.find(obj["username"])
+        ind = usernames.index(obj["username"])
         if(passwords[ind] == obj["password"]):
             return {"Message":"Login Successful", "Status": "402", "login":True }
         else:

@@ -25,7 +25,7 @@ class Details(Resource):
         pass
 
     def post(self, method,values):  
-        
+        print(method,values)
         if method == 'img_predict':
             file = request.files['selectedFile']
             file.save(secure_filename(file.filename))
@@ -37,6 +37,7 @@ class Details(Resource):
         if method == 'login':
             req = json.loads(request.data)
             if req.get('type') == 'fisherman':
+                print('into fisherman')
                 return fisherman_login(req)
             if req.get('type') == 'weighbridge':
                 return weighbridge_login(req)
