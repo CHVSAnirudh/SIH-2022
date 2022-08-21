@@ -10,6 +10,7 @@ def fisherman_login(obj):
     passwords = []
     for record in records:
         usernames.append(record["username"])
+        passwords.append(record["password"])
 
     if obj["username"] not in usernames:
         return "Username does not exist"
@@ -30,7 +31,7 @@ def weighbridge_login(obj):
     passwords = []
     for record in records:
         usernames.append(record["username"])
-
+        passwords.append(record["password"])
     if obj["username"] not in usernames:
         return "Username does not exist"
     else:
@@ -49,7 +50,7 @@ def govt_login(obj):
     passwords = []
     for record in records:
         usernames.append(record["username"])
-
+        passwords.append(record["password"])
     if obj["username"] not in usernames:
         return "Username does not exist"
     else:
