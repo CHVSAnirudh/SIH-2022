@@ -14,6 +14,7 @@ from werkzeug.utils import secure_filename
 from logins import *
 from registers import *
 import json
+from catch_detection import *
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
@@ -23,14 +24,16 @@ class Details(Resource):
     def get(self, method,values):
         pass
 
-    def post(self, method,values):
+    def post(self, method,values):  
         
         if method == 'img_predict':
             file = request.files['selectedFile']
             file.save(secure_filename(file.filename))
-            return self.get("run",file.filename)
-        
-        
+            return predict_image(file.filename,values)
+
+        if method == 'catch_dbupdate':
+            req = json.loads(request.data)
+            return catch_dbupdate(req)
         if method == 'login':
             req = json.loads(request.data)
             if req.get('type') == 'fisherman':
