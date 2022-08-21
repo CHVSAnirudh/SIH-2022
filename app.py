@@ -1,4 +1,4 @@
-from click import pass_context
+
 from flask import Flask, render_template,request
 from flask_restful import Api, Resource
 from flask_cors import CORS
@@ -11,7 +11,9 @@ import gridfs
 import os
 import glob
 from werkzeug.utils import secure_filename
-from login import *
+from logins import *
+from registers import *
+import json
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
@@ -22,13 +24,33 @@ class Details(Resource):
         pass
 
     def post(self, method,values):
+        
         if method == 'img_predict':
             file = request.files['selectedFile']
             file.save(secure_filename(file.filename))
             return self.get("run",file.filename)
-        if values == 'fisherman':
-            print(request)
-            return fisherman_login(obj)
+        
+        
+        if method == 'login':
+            req = json.loads(request.data)
+            if req.get('type') == 'fisherman':
+                return fisherman_login(req)
+            if req.get('type') == 'weighbridge':
+                return weighbridge_login(req)
+            if req.get('type') == 'govt':
+                return govt_login(req)
+        
+        
+        
+        if method == 'signup':
+            req = json.loads(request.data)
+            if values == 'fisherman':
+                return fisherman_register(req)
+            if values == 'govt':
+                return govt_register(req)
+            if values == 'weighbridge':
+                return weighbridge_register(req)
+ 
 
 @app.errorhandler(404)
 def invalid_route(e):
