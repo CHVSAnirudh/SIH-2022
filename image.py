@@ -3,7 +3,7 @@ from PIL import Image,ImageDraw
 import os
 import numpy as np
 import math
-for z in range(904,1069):
+for z in range(1069):
     print(z)
     no_of_fishes = random.randint(15,26)
     f = open("temp_dataset/labels/" + str(z) + ".txt", "a")
