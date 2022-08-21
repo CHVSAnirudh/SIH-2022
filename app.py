@@ -11,7 +11,7 @@ import gridfs
 import os
 import glob
 from werkzeug.utils import secure_filename
-
+from login import *
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
@@ -19,14 +19,16 @@ api = Api(app)
 
 class Details(Resource):
     def get(self, method,values):
-        if method == 'login':
-            pass
+        pass
 
     def post(self, method,values):
         if method == 'img_predict':
             file = request.files['selectedFile']
             file.save(secure_filename(file.filename))
             return self.get("run",file.filename)
+        if values == 'fisherman':
+            print(request)
+            return fisherman_login(obj)
 
 @app.errorhandler(404)
 def invalid_route(e):
