@@ -39,7 +39,9 @@ class Details(Resource):
 
         if method == 'catch_dbupdate':
             req = json.loads(request.data)
+            print(req)
             return catch_dbupdate(req)
+
         if method == 'login':
             req = json.loads(request.data)
             if req.get('type') == 'fisherman':

@@ -4,6 +4,7 @@ from requests.utils import DEFAULT_CA_BUNDLE_PATH
 import os
 import glob
 import json
+import math
 def predict_image(image,weight):
     # passing the image to model
 
@@ -41,25 +42,58 @@ def predict_image(image,weight):
                     mori+=1
                 else:
                     rohu+=1
+    result = []
     s = catla+rohu+mori
     catla_weight = (catla/s)*weight
+    catla_weight = round(catla_weight)
     rohu_weight = (rohu/s)*weight
+    rohu_weight = round(rohu_weight)
     mori_weight = (mori/s)*weight
+    mori_weight = round(mori_weight)
     catla_proportion = (catla/s)*100
+    catla_proportion = round(catla_proportion)
     rohu_proportion = (rohu/s)*100
+    rohu_proportion = round(rohu_proportion)
     mori_proportion = (mori/s)*100
+    mori_proportion = round(mori_proportion)
+    if catla_weight>0:
+        result.append({"name":"catla","weight":catla_weight,"proportion":catla_proportion})
+    if rohu_weight>0:
+        result.append({"name":"rohu","weight":rohu_weight,"proportion":rohu_proportion})
+    if mori_weight>0:
+        result.append({"name":"mori","weight":mori_weight,"proportion":mori_proportion})
 
     if catla==0 and rohu==0 and mori==0:
         return {'status': 'Sucess', 'result': "The model is still immature and only detects catla rohu and mori, either the image contains fishes of other species or come back to us with better resolution image"} 
-    return {'status': 'Sucess', 'result': {"pcatla":catla_proportion,"prohu":rohu_proportion,"pmori":mori_proportion,"catla":catla_weight,"rohu":rohu_weight,"mori":mori_weight}}
+    return {'status': 'Sucess', 'result': result}
 
 def catch_dbupdate(obj):
     client = MongoClient("mongodb+srv://test:test@cluster0.zppnq.mongodb.net/debuggers?retryWrites=true&w=majority")
     db = client.get_database('SIH')
-    records = db.catch_data
+    records = db.user_fisherman
     #records = list(records.find())
-    record = records.find_one(obj.get('username'))
-    record = json.loads(record)
-    record['catch'].append(obj.get('catch'))
+    record = records.find_one({"username":obj.get('username')})
+    print(record)
+    landing_centre = record['landing_center']
+    try:
+        obj_append = {}
+        obj_append['dateandtime'] = obj['dateandtime']
+        obj_append['weight'] = int(obj['weight'])
+        obj_append['catch'] = obj.get('catch')[0]
+        record['all_catch'].append(obj_append)
+    except:
+        record['all_catch'] = [obj_append]
     records.update_one({'username':obj.get('username')},{'$set':record})
+    
+    ## uploading it to govt_catch_data
+    records = db.govt_catch_data
+    for x in obj['catch']:
+        update = {}
+        update['username'] = obj['username']
+        update['dateandtime'] = obj['dateandtime']
+        update['landing_centre'] = landing_centre
+        update['specie_name'] = x['specie_name']
+        update['specie_weight'] = x['specie_weight']
+        records.insert_one(update)
+
     return {"Message":"Catch result added into database successfully", "Status":"200"}
