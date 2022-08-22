@@ -17,9 +17,14 @@ import json
 from catch_detection import *
 app = Flask(__name__)
 CORS(app)
+#app.config['CORS_HEADERS'] = 'Content-Type'
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 api = Api(app)
 
-
+#specifying origins
+#origins = ["http://localhost:5000","http://localhost","http://localhost:8080"]
+#cors
+#app.add_middleware(CORSMiddleware,allow_origins = origins, allow_credentials = True, all_methods = ['*'], allow_header = ['*'])
 class Details(Resource):
     def get(self, method,values):
         pass
@@ -47,6 +52,7 @@ class Details(Resource):
         
         
         if method == 'signup':
+            print(request.data)
             req = json.loads(request.data)
             if values == 'fisherman':
                 return fisherman_register(req)
@@ -54,6 +60,9 @@ class Details(Resource):
                 return govt_register(req)
             if values == 'weighbridge':
                 return weighbridge_register(req)
+        
+    def options(self,method,values):
+        return self.post(method,values)
  
 
 @app.errorhandler(404)
@@ -63,7 +72,7 @@ def invalid_route(e):
     except:
         print("err")
 
-api.add_resource(Details,'/api/<string:method>/<string:values>', methods =["GET","POST"])
+api.add_resource(Details,'/api/<string:method>/<string:values>', methods =["GET","POST","OPTIONS"])
 
 
 if __name__ == '__main__':

@@ -20,7 +20,9 @@ def govt_register(obj):
     client = MongoClient("mongodb+srv://test:test@cluster0.zppnq.mongodb.net/debuggers?retryWrites=true&w=majority")
     db = client.get_database('SIH')
     records = db.user_govt
-    #records = list(records.find())
+    records = list(records.find_one({'username':obj.get('username')}))
+    if len(records)>0:
+        return {"Message":"Username already taken try a different one", "Status":"402"}
     records.insert_one(obj)
     return {"Message":"Govt login added", "Status":"200"}
 
