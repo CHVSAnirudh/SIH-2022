@@ -35,7 +35,7 @@ class Details(Resource):
         if method == 'img_predict':
             file = request.files['selectedFile']
             file.save(secure_filename(file.filename))
-            return predict_image(file.filename,values)
+            return predict_image(file.filename,int(values))
 
         if method == 'catch_dbupdate':
             req = json.loads(request.data)

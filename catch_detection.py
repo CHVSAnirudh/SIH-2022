@@ -23,7 +23,7 @@ def predict_image(image,weight):
     rohu = 0
     mori = 0
     #for x in img:
-    os.system("python detect.py --weights ./runs/train/exp9/weights/best.pt --source {} --conf 0.2 --save-txt".format(image))  #img should be replaced
+    os.system("python detect.py --weights specie_detection.pt --source {} --conf 0.01 --save-txt".format(image))  #img should be replaced
     exp = glob.glob('./runs/detect/*/')
     print(exp)
     exp.remove('./runs/detect/exp/')
@@ -42,13 +42,16 @@ def predict_image(image,weight):
                 else:
                     rohu+=1
     s = catla+rohu+mori
-    catla_proportion = (catla/s)*weight
-    rohu_proportion = (rohu/s)*weight
-    mori_proportion = (mori/s)*weight
+    catla_weight = (catla/s)*weight
+    rohu_weight = (rohu/s)*weight
+    mori_weight = (mori/s)*weight
+    catla_proportion = (catla/s)*100
+    rohu_proportion = (rohu/s)*100
+    mori_proportion = (mori/s)*100
 
     if catla==0 and rohu==0 and mori==0:
         return {'status': 'Sucess', 'result': "The model is still immature and only detects catla rohu and mori, either the image contains fishes of other species or come back to us with better resolution image"} 
-    return {'status': 'Sucess', 'result': {"catla":catla_proportion,"rohu":rohu_proportion,"mori":mori_proportion}}
+    return {'status': 'Sucess', 'result': {"pcatla":catla_proportion,"prohu":rohu_proportion,"pmori":mori_proportion,"catla":catla_weight,"rohu":rohu_weight,"mori":mori_weight}}
 
 def catch_dbupdate(obj):
     client = MongoClient("mongodb+srv://test:test@cluster0.zppnq.mongodb.net/debuggers?retryWrites=true&w=majority")
