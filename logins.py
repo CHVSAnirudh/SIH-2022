@@ -14,6 +14,7 @@ def fisherman_login(obj):
         passwords.append(record["password"])
         if record["username"] == obj["username"]:
             req_obj = record
+            req_obj["_id"] = ""
             break
 
     if obj["username"] not in usernames:
@@ -40,6 +41,7 @@ def weighbridge_login(obj):
         passwords.append(record["password"])
         if record["username"] == obj["username"]:
             req_obj = record
+            req_obj["_id"] = ""
             break
 
     if obj["username"] not in usernames:
@@ -64,6 +66,7 @@ def govt_login(obj):
         passwords.append(record["password"])
         if record["username"] == obj["username"]:
             req_obj = record
+            req_obj["_id"] = ""
             break
 
     if obj["username"] not in usernames:
