@@ -5,21 +5,11 @@ import os
 import glob
 import json
 import math
+from turtle_detection import *
 def predict_image(image,weight):
-    # passing the image to model
-
-    # exp = glob.glob('./runs/detect/*/')
-    # print(exp)
-    # exp.remove('./runs/detect/exp/')
-    # exp = sorted(exp,key = lambda x:int(x[17:-1:]),reverse=True)
-    # print(exp[0])
-    # l = glob.glob('{}/crops/*/'.format(exp[0]))
-    # print(l)
-    # img = []
-    # for x in l:
-    #     folders = glob.glob('{}/*jpg'.format(x))
-    #     img.extend(folders)
-    # print(img)
+    # passing the image to model for detecting endangered
+    turtle_detect = predict_image_endangered(image)
+    
     catla = 0
     rohu = 0
     mori = 0
@@ -63,11 +53,15 @@ def predict_image(image,weight):
     if mori_weight>0:
         result.append({"name":"mori","weight":mori_weight,"proportion":mori_proportion})
 
+    if turtle_detect['endangered'] == True:
+        result.append({"name":"turtle","weight":"unknown","proportion":"unknown"})
+
     if catla==0 and rohu==0 and mori==0:
         return {'status': 'Sucess', 'result': "The model is still immature and only detects catla rohu and mori, either the image contains fishes of other species or come back to us with better resolution image"} 
     return {'status': 'Sucess', 'result': result}
 
 def catch_dbupdate(obj):
+
     client = MongoClient("mongodb+srv://test:test@cluster0.zppnq.mongodb.net/debuggers?retryWrites=true&w=majority")
     db = client.get_database('SIH')
     records = db.user_fisherman
