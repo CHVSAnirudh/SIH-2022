@@ -3,18 +3,18 @@ from PIL import Image,ImageDraw
 import os
 import numpy as np
 import math
-for z in range(1):
+for z in range(156, 690):
     no_of_fishes = random.randint(15,26)
-    no_of_turtles = random.randint(1,4)
+    no_of_turtles = random.randint(1,3)
     f = open("turtle_images/labels/" + str(z) + ".txt", "a")
-    print(no_of_fishes)
+    #print(no_of_fishes)
     whitebg_ht = 2830
     whitebg_width = 4244
 
     white_img = Image.open("whitebg.png")
     white_img = white_img.resize((whitebg_width, whitebg_ht))
     white_img.save("whitebg.png")
-    print(white_img.size)
+    #print(white_img.size)
     min_height = whitebg_ht // 5
     max_height = whitebg_ht // 4
 
@@ -25,7 +25,7 @@ for z in range(1):
     img_names = []
     for i in range(no_of_fishes):
         im = random.choice(os.listdir(r"dataset"))
-        print(im)
+        #print(im)
         img_names.append(im)
         im = r"dataset/"+im
         #remove_black_bg(im)
@@ -34,7 +34,7 @@ for z in range(1):
         images.append(img)
     for i in range(no_of_turtles):
         im = random.choice(os.listdir(r"turtle_dataset"))
-        print(im)
+        #print(im)
         img_names.append(im)
         im = r"turtle_dataset/"+im
         #remove_black_bg(im)
