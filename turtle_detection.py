@@ -26,7 +26,7 @@ def predict_image(image,weight):
                 elif line[0] == '1':
                     fishes+=1
     result = {}
-    result["turtles":turtles]
+    #result["turtles":turtles]
     if turtles != 0:
         catch_dbupdate()
     return {'status': 'Sucess', 'turtles': turtles}
@@ -52,7 +52,7 @@ def predict_image(image,weight):
 
     # if catla==0 and rohu==0 and mori==0:
     #     return {'status': 'Sucess', 'result': "The model is still immature and only detects catla rohu and mori, either the image contains fishes of other species or come back to us with better resolution image"} 
-    return {'status': 'Sucess', 'result': result}
+    #return {'status': 'Sucess', 'result': result}
 
 def catch_dbupdate(obj):
     client = MongoClient("mongodb+srv://test:test@cluster0.zppnq.mongodb.net/debuggers?retryWrites=true&w=majority")
