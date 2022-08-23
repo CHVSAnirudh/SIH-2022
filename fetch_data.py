@@ -4,6 +4,7 @@ def govt_catch():
     db = client.get_database('SIH')
     records = db.govt_catch_data
     record = list(records.find())
+    record = sorted(record,key=lambda x:x['dateandtime'])
     for x in record:
         x['_id'] = ' '
     return record

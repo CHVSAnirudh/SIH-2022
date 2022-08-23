@@ -33,19 +33,27 @@ def predict_image(image,weight):
                 else:
                     rohu+=1
     result = []
+    catla = catla*1.2
+    rohu = rohu*0.8
+    mori = mori*1.5
     s = catla+rohu+mori
-    catla_weight = (catla/s)*weight
-    catla_weight = round(catla_weight)
-    rohu_weight = (rohu/s)*weight
-    rohu_weight = round(rohu_weight)
-    mori_weight = (mori/s)*weight
-    mori_weight = round(mori_weight)
-    catla_proportion = (catla/s)*100
-    catla_proportion = round(catla_proportion)
-    rohu_proportion = (rohu/s)*100
-    rohu_proportion = round(rohu_proportion)
-    mori_proportion = (mori/s)*100
-    mori_proportion = round(mori_proportion)
+    try:
+        catla_weight = (catla/s)*weight
+        catla_weight = round(catla_weight)
+        rohu_weight = (rohu/s)*weight
+        rohu_weight = round(rohu_weight)
+        mori_weight = (mori/s)*weight
+        mori_weight = round(mori_weight)
+        catla_proportion = (catla/s)*100
+        catla_proportion = round(catla_proportion)
+        rohu_proportion = (rohu/s)*100
+        rohu_proportion = round(rohu_proportion)
+        mori_proportion = (mori/s)*100
+        mori_proportion = round(mori_proportion)
+    except:
+        catla_weight = 0
+        rohu_weight = 0
+        mori_weight = 0
     if catla_weight>0:
         result.append({"name":"catla","weight":catla_weight,"proportion":catla_proportion})
     if rohu_weight>0:
