@@ -90,7 +90,7 @@ classify/
 data/
 models/
 utils/
-
+__pycache__/
 # PyBuilder
 target/
 
