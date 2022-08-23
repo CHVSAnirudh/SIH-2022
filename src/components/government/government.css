@@ -1,0 +1,379 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+
+.container{
+    width:44vw;
+    float: left;
+    position: relative;
+    left: 6vw;
+    /* background-color: rgba(204, 204, 204, 0.2); */
+}
+
+.fixedDisplay{
+    position: fixed;
+    left:50vw;
+    height:90vh;
+    width:50vw;
+    padding:5vh 2vw;
+    background-color: white ;
+}
+
+.searchBar{
+    width:50%;
+    margin:40px auto 5px auto;
+    display: flex;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow:0px 1px 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+input{
+    width:80%;
+    padding:10px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-color: #ffffff;
+    border:transparent;
+    
+}
+
+input:focus{
+    outline: none;
+}
+
+button{
+    width:20%;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border:transparent;
+    background-color: rgba(0, 110, 157, 0.8);
+    color: #fff;
+    cursor: pointer;
+}
+button:hover{
+    background-color:#006e9d;
+    
+}
+
+.indiaMap, .stateMap{
+    width:100%;
+    position: relative;
+}
+
+svg{
+    margin:0 13%;
+    transform: scale(0.8);
+    
+}
+
+svg path{
+    fill: rgb(204, 204, 204,0.6);
+    z-index: 3 !important;
+}
+
+svg path:hover{
+    fill: #ff6384;
+    transition: 0.6s;
+}
+
+/* circle{
+    z-index: 5 !important;
+    fill-opacity: 0.4;
+    fill:rgb(0, 110, 157);
+    stroke: rgb(0, 110, 157);
+    cursor: pointer;
+}
+circle:hover{
+    fill-opacity: 0.6;
+    cursor: pointer;
+} */
+.selection{
+    width:50%;
+    margin: 50px auto;
+}
+select{
+    width: 100%;
+
+    padding:10px;
+    border-radius: 5px;
+    margin:10px auto;
+    border: transparent;
+    background-color: #fff;
+}
+
+.graphs{
+    position: relative;
+    margin: 50px auto;
+    /* background-color: red; */
+}
+
+
+.toggleOption{
+    position: relative;
+    /* right:0; */
+    /* left:0%; */
+    display: inline-block;
+    width: 40px;
+    height:20px;
+    border-radius: 50%;
+    margin: 10px 100px ;
+    
+}
+
+.toggleOption input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:rgb(255, 99, 132) ;
+    border-radius: 20px;
+}
+
+.slider:before{
+    content: "";
+    position: absolute;
+    height:14px;
+    width:14px;
+    left:3px;
+    top:3px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+.toggleOption input:checked + .slider:before{
+    transform: translateX(20px);
+}
+
+.toggleOption input:checked + .slider{
+    background-color:rgba(0, 110, 157, 0.2) ;
+}
+
+.charts{
+    width:80% !important;
+    margin:20px auto;
+    display:none;
+}
+
+.charts.barchart{
+    display:block;
+}
+
+.charts.linechart{
+    display:block;
+}
+
+.infoCards{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    margin:60px auto;
+    justify-content: center !important;
+    justify-items: center;
+    align-items: center;
+}
+
+.card{
+    width:70%;
+    height:250px;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px 20px;
+}
+
+.card img{
+    width: 80%;
+    margin:0 10%;
+}
+
+.card p{
+    font-size: 13px;
+}
+
+
+.card:nth-child(1){
+    background-color: rgba(255, 31, 79, 0.1);
+    color: rgb(255, 31, 79) ;
+    /* #ff1f4f */
+    margin: 10px 0px 20px 15px;
+}
+
+.card:nth-child(2){
+    background-color: rgba(52, 163, 0, 0.1);
+    color: rgb(52, 163, 0) ;
+    /* #34a300 */
+    margin: 10px 15px 20px 0px;
+}
+
+.card:nth-child(3){
+    background-color: rgba(0, 100, 143, 0.1);
+    color: rgb(0, 100, 143);
+    /* #00648f */
+    margin: 10px 0px 20px 15px;
+}
+
+.card:nth-child(4){
+    background-color: rgba(224, 138, 0, 0.1);
+    color: rgb(224, 138, 0) ;
+    /* #e08a00 */
+    margin: 10px 15px 20px 0px;
+}
+
+.card:nth-child(5){
+    background-color: rgba(106, 13, 173, 0.1);
+    color: rgb(106, 13, 173) ;
+    /* #6a0dad */
+    margin: 10px 0px 20px 15px;
+}
+
+
+.card:nth-child(6){
+    background-color: rgba(255, 31, 79,0.2);
+    color: rgb(255, 31, 79) ;
+    /*  */
+    margin: 10px 15px 20px 0px;
+}
+
+.analysisPeriod{
+    display: flex;
+    width:50%;
+    margin:10px auto 10px auto;
+}
+
+.periodOptions{  
+    background-color: rgba(0, 100, 143, 0.1);
+    color: rgb(0, 100, 143);
+    text-align: center;
+    padding: 5px;
+    width:30px;
+    font-size: 12px;
+    margin: 0 3px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.periodOptions:hover{
+    background-color: rgba(0, 100, 143, 0.7);
+    color: #fff;
+    
+}
+
+.fixedPart{
+    /* display: grid;
+    
+    grid-template-columns:2fr 1fr; */
+    /* background-color: red; */
+    margin: 10px auto;
+    width:50%;
+}
+
+.fixedPart input{
+    padding: 0 10px;
+}
+
+.fixedPart input:focus{
+    border: transparent;
+}
+
+.stateName{
+    background-color: rgba(255, 31, 79,0.2);
+    color: rgb(255, 31, 79) ;
+    /* width:%; */
+    padding:1% 3%;
+    border-radius: 5px;
+    /* margin:30px auto; */
+    line-height: 16px;
+}
+
+.stateName p{
+    font-size: 12px;
+}
+
+.fishesAndEndangered{
+    margin: 30px auto;
+    width:70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.fishDetails,
+.endangeredDetails{
+    height: 20px;
+    padding: 10px;
+    cursor: pointer;
+    /* background-color: rgb(0, 100, 143); */
+    border: 1px solid rgb(0, 100, 143);
+    /* color: #fff; */
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.fishDetails:hover,
+.endangeredDetails:hover{
+    background-color: rgba(0, 100, 143, 0.1);
+    color: rgb(0, 100, 143);
+}
+
+
+/* government fishes */
+
+.dropdown {
+    background-color: rgba(0, 100, 143, 0.1);
+    display: flex; 
+    flex-direction: column;
+    color: rgb(0, 100, 143);
+    width:40%;
+    margin:0 auto;
+    padding: 0 5%;
+    /* background-color: red; */
+  }
+  
+  .dropdown:empty {
+    border: none;
+    
+  }
+  
+  .dropdown-row {
+    cursor: pointer;
+    text-align: start;
+    margin: 2px 0;
+    background-color: transparent;
+    color: rgb(0, 100, 143);
+  }
+
+.nameCardDetails{
+    background-color: rgba(224, 138, 0, 0.1);
+    color: rgb(224, 138, 0) ;
+    width:60%;
+    height: 125px;
+    margin:5% auto;
+    /* padding: 3%; */
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameCardDetails img{
+    width:100%;
+    /* background-color: #ff6384; */
+    margin:0 10%;
+}
+
+.fishData,
+.fishImage{
+    line-height: 8px;
+    padding:1%;
+    /* background-color: rgba(255, 99, 132,0.2); */
+}
+
+/**/

@@ -1,67 +1,20 @@
-# Repo-specific GitIgnore ----------------------------------------------------------------------------------------------
-*.jpg
-*.jpeg
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/temp_dataset
+/node_modules
+/classify
+/dataset
+/models
+/utils
+/runs
+/data
+/__pycache__
+
+/.pnp
 *.png
-*.bmp
-*.tif
-*.tiff
-*.heic
-*.JPG
-*.JPEG
-*.PNG
-*.BMP
-*.TIF
-*.TIFF
-*.HEIC
-*.mp4
-*.mov
-*.MOV
-*.avi
-*.data
-*.json
-*.cfg
-!setup.cfg
-!cfg/yolov3*.cfg
-
-storage.googleapis.com
-runs/*
-data/*
-data/images/*
-!data/*.yaml
-!data/hyps
-!data/scripts
-!data/images
-!data/images/zidane.jpg
-!data/images/bus.jpg
-!data/*.sh
-
-results*.csv
-
-# Datasets -------------------------------------------------------------------------------------------------------------
-coco/
-coco128/
-VOC/
-
-# MATLAB GitIgnore -----------------------------------------------------------------------------------------------------
-*.m~
-*.mat
-!targets*.mat
-
-# Neural Network weights -----------------------------------------------------------------------------------------------
-*.weights
 *.pt
-*.pb
-*.onnx
-*.engine
-*.mlmodel
-*.torchscript
-*.tflite
-*.h5
-*_saved_model/
-*_web_model/
-*_openvino_model/
-darknet53.conv.74
-yolov3-tiny.conv.15
+.pnp.js
 
 # GitHub Python GitIgnore ----------------------------------------------------------------------------------------------
 # Byte-compiled / optimized / DLL files
@@ -260,6 +213,3 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-
-
-
