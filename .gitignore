@@ -91,6 +91,7 @@ data/
 models/
 utils/
 __pycache__/
+node_modules/*
 # PyBuilder
 target/
 
@@ -213,3 +214,4 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+/node_modules
