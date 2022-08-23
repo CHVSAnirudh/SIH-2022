@@ -3,7 +3,7 @@ from PIL import Image,ImageDraw
 import os
 import numpy as np
 import math
-for z in range(156, 690):
+for z in range(700,701):
     no_of_fishes = random.randint(15,26)
     no_of_turtles = random.randint(1,3)
     f = open("turtle_images/labels/" + str(z) + ".txt", "a")
