@@ -86,6 +86,7 @@ lib64/
 parts/
 sdist/
 var/
+
 wheels/
 *.egg-info/
 /wandb/
@@ -131,6 +132,10 @@ instance/
 
 # Sphinx documentation
 docs/_build/
+classify/
+data/
+models/
+utils/
 
 # PyBuilder
 target/
@@ -254,3 +259,4 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
+node_modules
