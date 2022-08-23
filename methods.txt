@@ -1,0 +1,41 @@
+login --> post (username,password,type) this returns true/false & userdata
+
+fisherman
+api/signup/fisherman
+signup --> post (username,password,landing_center,phone,email)
+
+govt 
+api/signup/govt
+signup --> post(username,password)
+
+weighbridge
+api/signup/weighbridge
+signup --> post(weighbridge_userid,weighbridge_password,landing_centerid,phone)
+
+fisherman_upload --> post(image,estimated weight) returns 
+api/fisherman_upload/
+"fishes":[
+		{
+			"speciename":,
+			"specielocalname":,
+			"specieimage":,
+			"specieproportion":,
+			"specieweight":,
+			"specietype":,
+		}]
+
+catch_dbupdate --> post(json object) this will upload the catch details to db
+fishes:[
+		{
+			"userid":,
+			"speciename":,
+			"specielocalname":,
+			"specieimage":,
+			"specieproportion":,
+			"specieweight":,
+			"dateandtime":,
+			"landingcenterid":,
+		}]
+
+
+

@@ -86,6 +86,7 @@ lib64/
 parts/
 sdist/
 var/
+node_modules/
 
 wheels/
 *.egg-info/
@@ -259,4 +260,6 @@ com_crashlytics_export_strings.xml
 crashlytics.properties
 crashlytics-build.properties
 fabric.properties
-node_modules
+
+
+
