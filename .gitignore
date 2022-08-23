@@ -3,7 +3,17 @@
 # dependencies
 /temp_dataset
 /node_modules
+/classify
+/dataset
+/models
+/utils
+/runs
+/data
+/__pycache__
+
 /.pnp
+*.png
+*.pt
 .pnp.js
 
 # testing

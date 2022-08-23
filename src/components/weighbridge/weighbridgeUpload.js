@@ -2,7 +2,7 @@ import React from 'react'
 import LogoutButton from '../main/logoutButton'
 import WeighbridgeNavbar from './weighbridgeNavbar'
 
-function WeighbridgeLog() {
+function WeighbridgeUpload() {
   return (
     <>
     <WeighbridgeNavbar />
@@ -11,8 +11,4 @@ function WeighbridgeLog() {
   )
 }
 
-export default WeighbridgeLog
-
-
-
-
+export default WeighbridgeUpload

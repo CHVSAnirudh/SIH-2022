@@ -1,8 +1,13 @@
 import React from 'react'
+import LogoutButton from '../main/logoutButton'
+import WeighbridgeNavbar from './weighbridgeNavbar'
 
 function Weighbridge() {
   return (
-    <div>Weighbridge</div>
+    <>
+    <WeighbridgeNavbar />
+    <LogoutButton />
+    </>
   )
 }
 

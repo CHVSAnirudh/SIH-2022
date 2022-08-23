@@ -11,7 +11,7 @@ class GovernmentNavbar extends Component{
         return (
             <>
                 <div className='governmentNavbar'>
-                    <Link to="/government">
+                    <Link to="/government/home">
                         <div className='navbarItem'>
                             <img src={Home}></img>
                         </div>

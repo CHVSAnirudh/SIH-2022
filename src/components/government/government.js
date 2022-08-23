@@ -1,8 +1,14 @@
 import React from 'react'
+import LogoutButton from '../main/logoutButton'
+import GovernmentNavbar from './governmentNavbar'
 
 const Government = () => {
   return (
-    <div>Government</div>
+    <>
+      <GovernmentNavbar />
+      <LogoutButton />
+    </>
+    
   )
 }
 

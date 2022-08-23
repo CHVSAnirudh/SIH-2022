@@ -1,0 +1,204 @@
+.fullContainer{
+    position: absolute;
+    width:94vw;
+    background-color: rgba(204, 204, 204,0.2);
+    /* background-color: red; */
+    left:6vw;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    margin: 10px;
+    color:red;
+}
+
+.textHome{
+    width:50%;
+    font-size:1rem;
+    margin:10% 25% 0 25%;
+    text-align: center;
+    display: inline-block;
+}
+
+.buttonDiv{
+    margin: 0 auto ;
+    width:30%;
+}
+
+.buttonDiv button{
+    width:100%;
+    background-color: rgba(255, 31, 79, 0.1);
+    color: rgb(255, 31, 79) ;
+    margin: 20px auto;
+    padding: 20px;
+    display: block;
+    border-radius: 5px;
+}
+
+/* .buttonDiv .fishButton{
+    color:black;
+} */
+
+
+.loginBox1{
+    background-color: rgba(0, 100, 143, 0.1);
+    color: rgb(0, 100, 143);
+    width:25%;
+    margin: 3% 30%;
+    padding:4% 7%;
+    border-radius: 2rem;
+    /* box-shadow: 10px 10px 5px red; */
+}
+
+.loginBox2{
+    background-color: rgba(224, 138, 0, 0.1);
+    color: rgb(224, 138, 0) ;
+    width:25%;
+    margin: 3% 30%;
+    padding:4% 7%;
+    border-radius: 2rem;
+}
+
+.loginBox3{
+    background-color: rgba(52, 163, 0, 0.1);
+    color: rgb(52, 163, 0) ;
+    width:25%;
+    margin: 3% 30%;
+    padding:4% 7%;
+    border-radius: 2rem;
+}
+
+.Username{
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    height:2rem;
+    width:92%;
+    background-color:white;
+    border-radius: 0.5rem;
+}
+
+
+.Password{
+    /* margin:10px; */
+    height:2rem;
+    width:92%;
+    /* padding:15px 70px; */
+    margin-bottom: 1.5rem;
+    /* margin:2.5%; */
+    border-radius: 0.5rem;
+    background-color: white;
+}
+
+.fishermanSubmit,
+.fishermanRegisterSubmit,
+.weighbridgeSubmit,
+.governmentSubmit{
+    width:97%;
+    color:white;
+    font-size: 1rem;
+    height: 4rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.fishermanSubmit,
+.fishermanRegisterSubmit{
+    background-color: rgb(0, 100, 143);
+}
+
+.fishermanSubmit:hover,
+.fishermanRegisterSubmit:hover{
+    background-color: rgb(0, 100, 143, 0.8);
+}
+
+.governmentSubmit{
+    background-color: rgb(224, 138, 0) ;
+}
+
+.governmentSubmit:hover{
+    background-color: rgba(224, 138, 0, 0.8) ;
+}
+
+.weighbridgeSubmit{
+    background-color:rgb(52, 163, 0) ;
+}
+
+.weighbridgeSubmit:hover{
+    background-color:rgba(52, 163, 0,0.8) ;
+}
+  
+.fp{
+    margin-bottom: 1rem;
+    font-size: 0.7rem;
+}
+
+a{
+    color:black;
+    text-decoration: none;
+    font-size:0.7rem;
+}
+
+.register{
+    background-color: rgba(0, 100, 143, 0.1);
+    color: rgb(0, 100, 143);
+    width:35%;
+    margin: 3% 25%;
+    padding:4% 7%;
+    border-radius: 2rem;
+    /* box-shadow: 10px 10px 5px red; */
+}
+
+.type1{
+    margin-top: 1rem;
+    /* margin-bottom: 1.5rem; */
+    margin-right:1.3rem;
+    height:2rem;
+    width:32%;
+    background-color:white;
+    border-radius: 0.5rem;
+    display: inline;
+}
+
+.type2{
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    height:2rem;
+    width:50%;
+    background-color:white;
+    border-radius: 0.5rem;
+}
+
+.landingDropdown{
+    position: relative;
+}
+
+
+.Fdropdown {
+    position: absolute;
+    top:75%;
+    /* background-color: rgba(0, 100, 143, 0.1); */
+    background-color: #ffffff;
+    flex-direction: column;
+    color: rgb(0, 100, 143);
+    width:86%;
+    margin:0 auto;
+    padding: 0 5%;
+    border-radius: 5px;
+    border: 1px dotted rgb(0, 100, 143);
+    /* background-color: red; */
+  }
+  
+  .Fdropdown:empty {
+    border: none;
+    
+  }
+  
+  .Fdropdown-row {
+    cursor: pointer;
+    text-align: start;
+    margin: 2px 0;
+    background-color: transparent;
+    color: rgb(0, 100, 143);
+  }

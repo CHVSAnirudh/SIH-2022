@@ -1,21 +1,24 @@
 .fullContainer{
     position: absolute;
     width:94vw;
-    background-color: rgba(204, 204, 204,0.2);
+    /* background-color: rgba(204, 204, 204,0.2); */
+    background-color: red;
     /* background-color: red; */
     left:6vw;
-    height: 100vh;
+     min-height: 100vh !important;
 }
+
+/* .top{
+    height:40vh;
+    position: relative;
+} */
 
 .form{
     width:20%;
+    /* height:30%; */
     display: grid;
     grid-template-columns: 1fr;
-    margin:0 auto;
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
+    margin:100px auto;
     /* background-color: blue; */
 }
 
@@ -53,7 +56,7 @@ button.confirmSubmit{
     padding: 20px;
 }
 
-.results h3{
+h3{
     text-align: center;
 }
 
@@ -157,4 +160,12 @@ thead td:nth-child(5){
 .forecastCard:nth-child(2){
     background-color: rgba(224, 138, 0, 0.1);
     color: rgb(224, 138, 0) ;
+}
+
+.endangered{
+    background-color:  rgba(255, 31, 79,0.2);;
+}
+
+.endangered:hover{
+    background-color:  rgba(255, 31, 79,0.5);;
 }

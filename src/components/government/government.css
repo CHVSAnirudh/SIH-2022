@@ -1,21 +1,30 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+
+
 .container{
     width:44vw;
-    background-color: rgba(204, 204, 204,0.2);
-    float: right;
+    float: left;
+    position: relative;
+    left: 6vw;
+    /* background-color: rgba(204, 204, 204, 0.2); */
 }
 
 .fixedDisplay{
     position: fixed;
-    left:6vw;
-    height:100vh;
+    left:50vw;
+    height:90vh;
     width:50vw;
-    /* background-color: red; */
+    padding:5vh 2vw;
+    background-color: white ;
 }
 
 .searchBar{
     width:50%;
     margin:40px auto 5px auto;
     display: flex;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    box-shadow:0px 1px 20px 5px rgba(0, 0, 0, 0.1);
 }
 
 input{
@@ -23,8 +32,9 @@ input{
     padding:10px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    background-color: rgba(204, 204, 204,0.2);
+    background-color: #ffffff;
     border:transparent;
+    
 }
 
 input:focus{
@@ -92,15 +102,16 @@ select{
 }
 
 .graphs{
-    width:100%;
     position: relative;
+    margin: 50px auto;
     /* background-color: red; */
 }
 
 
 .toggleOption{
     position: relative;
-    right:0;
+    /* right:0; */
+    /* left:0%; */
     display: inline-block;
     width: 40px;
     height:20px;
@@ -147,7 +158,7 @@ select{
 }
 
 .charts{
-    width:70% !important;
+    width:80% !important;
     margin:20px auto;
     display:none;
 }
@@ -232,9 +243,8 @@ select{
 
 .analysisPeriod{
     display: flex;
-    position: absolute;
-    top:0;
-    right:15%;
+    width:50%;
+    margin:10px auto 10px auto;
 }
 
 .periodOptions{  
@@ -311,3 +321,59 @@ select{
     color: rgb(0, 100, 143);
 }
 
+
+/* government fishes */
+
+.dropdown {
+    background-color: rgba(0, 100, 143, 0.1);
+    display: flex; 
+    flex-direction: column;
+    color: rgb(0, 100, 143);
+    width:40%;
+    margin:0 auto;
+    padding: 0 5%;
+    /* background-color: red; */
+  }
+  
+  .dropdown:empty {
+    border: none;
+    
+  }
+  
+  .dropdown-row {
+    cursor: pointer;
+    text-align: start;
+    margin: 2px 0;
+    background-color: transparent;
+    color: rgb(0, 100, 143);
+  }
+
+.nameCardDetails{
+    background-color: rgba(224, 138, 0, 0.1);
+    color: rgb(224, 138, 0) ;
+    width:60%;
+    height: 125px;
+    margin:5% auto;
+    /* padding: 3%; */
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.nameCardDetails img{
+    width:100%;
+    /* background-color: #ff6384; */
+    margin:0 10%;
+}
+
+.fishData,
+.fishImage{
+    line-height: 8px;
+    padding:1%;
+    /* background-color: rgba(255, 99, 132,0.2); */
+}
+
+/**/

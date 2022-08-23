@@ -2,10 +2,15 @@ import React from 'react'
 import './fisherman.css'
 import FishImage from '../images/mackeral.png'
 import { Link } from 'react-router-dom'
+import FishermanNavbar from './fishermanNavbar'
+import LogoutButton from '../main/logoutButton'
 
 function FishermanEstimation() {
+  
   return (
     <>
+        <FishermanNavbar />
+        <LogoutButton />
         <div className='results'>
             <h3>Estimations</h3>
             <table>
@@ -19,6 +24,7 @@ function FishermanEstimation() {
               </thead>
               {/* <img src={FishImage} width="100%"></img> */}
               <tbody>
+                {}
                 <tr>
                   <td colSpan="1">1</td>
                   <td>Sci: askjdnakjsd<br></br>Loc: Mackeral</td>

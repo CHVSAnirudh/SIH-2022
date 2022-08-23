@@ -2,10 +2,14 @@ import React from 'react'
 import {Chart} from 'chart.js'
 import {Bar, Line, Pie} from 'react-chartjs-2'
 import './government.css'
+import GovernmentNavbar from './governmentNavbar'
+import LogoutButton from '../main/logoutButton'
 
 const GovernmentHarbors = () => {
   return (
     <>
+    <GovernmentNavbar />
+    <LogoutButton />
       <div className='fullContainer'>
         <div className='searchBar'>
             <input type="text" placeholder="Enter a State or Harbor name..."></input>

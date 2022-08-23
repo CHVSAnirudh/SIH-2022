@@ -1,4 +1,4 @@
-import HomeNavbar from "./homeNavbar.js";
+import HomeNavbar from "./homeNavbar";
 import { React, Component } from "react";
 // import "/Home/fishermanLogin";
 // import "./govtLogin";
@@ -6,7 +6,7 @@ import { React, Component } from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
 
-class Home extends Component {
+class HomePage extends Component {
   render() {
     return (
       <div>
@@ -16,14 +16,14 @@ class Home extends Component {
             <h1>Welcome to Main Page</h1>
           </div>
           <div className="buttonDiv">
-            <Link to="/home/fisherman/login">
-              <button className="loginButton">Fisherman Login</button>
+            <Link to="/Home/fishermanLogin">
+              <button className="fishButton">Fisherman Login</button>
             </Link>
-            <Link to="/home/government/login">
-              <button className="loginButton">Government Login</button>
+            <Link to="/Home/govtLogin">
+              <button className="govtButton">Government Login</button>
             </Link>
-            <Link to="/home/weighbridge/login">
-              <button className="loginButton">Weigh Bridge Login</button>
+            <Link to="/Home/wbLogin">
+              <button className="wbButton">Weigh Bridge Login</button>
             </Link>
           </div>
         </div>
@@ -32,4 +32,4 @@ class Home extends Component {
   }
 }
 
-export default Home;
+export default HomePage;

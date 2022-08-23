@@ -1,8 +1,12 @@
 import React from 'react'
+import LogoutButton from '../main/logoutButton'
+import FishermanNavbar from './fishermanNavbar'
 
 function FishermanAdvice() {
   return (
     <>
+      <FishermanNavbar />
+      <LogoutButton />
       <div className='fullContainer'>
         <div className='searchBar'>
             <input type="text" placeholder="Enter a Fish Name..."></input>

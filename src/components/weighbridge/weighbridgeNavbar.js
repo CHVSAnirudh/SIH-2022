@@ -16,7 +16,7 @@ class WeighbridgeNavbar extends Component{
                         </div>
                     </Link>
 
-                    <Link to="/weighbridge/video">
+                    <Link to="/weighbridge/upload">
                         <div className='navbarItem'>
                             <img src={Video}></img>
                         </div>
