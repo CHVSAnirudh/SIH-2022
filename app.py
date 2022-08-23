@@ -16,6 +16,7 @@ from registers import *
 import json
 from catch_detection import *
 import logging
+from fetch_data import *
 app = Flask(__name__)
 cors = CORS(app,supports_credentials = True)
 #app.config['CORS_HEADERS'] = 'Content-Type'
@@ -28,7 +29,8 @@ logging.getLogger('flask_cors').level = logging.DEBUG
 
 class Details(Resource):
     def get(self, method,values):
-        pass
+        if method == 'govt_catch':
+            return govt_catch()
     @cross_origin()
     def post(self, method,values):        
         print(method,values)

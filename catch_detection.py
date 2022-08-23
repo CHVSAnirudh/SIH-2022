@@ -73,7 +73,7 @@ def catch_dbupdate(obj):
         obj_append = {}
         obj_append['dateandtime'] = obj['dateandtime']
         obj_append['weight'] = int(obj['weight'])
-        obj_append['catch'] = obj.get('catch')[0]
+        obj_append['catch'] = obj.get('catch')
         record['all_catch'].append(obj_append)
     except:
         record['all_catch'] = [obj_append]
