@@ -9,7 +9,7 @@ def predict_image_endangered(image):
     turtles = 0
     fishes = 0
 
-    os.system("python detect.py --weights endangered_yolov5m.pt --source {} --conf 0.01 --save-txt".format(image))  
+    os.system("python detect.py --weights endangered_yolov5m.pt --source {} --conf 0.18 --save-txt".format(image))  
     exp = glob.glob('./runs/detect/*/')
     print(exp)
     exp.remove('./runs/detect/exp/')

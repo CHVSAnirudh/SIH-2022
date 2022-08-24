@@ -14,7 +14,7 @@ def predict_image(image,weight):
     rohu = 0
     mori = 0
     #for x in img:
-    os.system("python detect.py --weights specie_detection.pt --source {} --conf 0.01 --save-txt".format(image))  
+    os.system("python detect.py --weights specie_detection.pt --source {} --conf 0.1 --save-txt --hide-conf".format(image))  
     exp = glob.glob('./runs/detect/*/')
     print(exp)
     exp.remove('./runs/detect/exp/')
