@@ -17,6 +17,8 @@ import json
 from catch_detection import *
 import logging
 from fetch_data import *
+import torch
+from faster_yolo import *
 app = Flask(__name__)
 cors = CORS(app,supports_credentials = True)
 #app.config['CORS_HEADERS'] = 'Content-Type'
@@ -28,6 +30,8 @@ api = Api(app)
 logging.getLogger('flask_cors').level = logging.DEBUG
 
 class Details(Resource):
+    #model = torch.hub.load('ultralytics/yolov5', 'custom', path_or_model='specie_detection.pt' , pretrained=True)
+
     def get(self, method,values):
         if method == 'govt_catch':
             return govt_catch()
@@ -38,6 +42,7 @@ class Details(Resource):
             file = request.files['selectedFile']
             file.save(secure_filename(file.filename))
             return predict_image(file.filename,int(values))
+            #return  faster_yolo(self.model,file.filename)
 
         if method == 'catch_dbupdate':
             req = json.loads(request.data)
