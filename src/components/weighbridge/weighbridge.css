@@ -1,0 +1,39 @@
+
+.secondModule{
+    margin-left:3rem;
+}
+.fullContainer input.upload{
+    /* background-color: #fff; */
+    background-color: #00648f;
+    width:100%;
+    border-radius: 5px;
+    /* margin:10%; */
+    margin-top:5%;
+    margin-bottom:5%;
+    cursor: pointer;
+    display:inline-block;
+}
+
+.module1{
+    display:inline-block;
+    margin:5%;
+}
+
+img{
+    width:100%;
+    height:auto;
+}
+
+.preview {
+    /* margin-left: 0rem; */
+    margin-bottom:1rem;
+    width:120%;
+    display: none;
+    background-color: rgba(0, 100, 143, 0.1);
+    /* display:inline-block; */
+    border-radius: 5px;
+}
+
+.show{
+    display:block;
+}

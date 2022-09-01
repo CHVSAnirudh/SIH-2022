@@ -29,11 +29,11 @@ class FishermanNavbar extends Component{
                         </div>
                     </Link>
 
-                    <Link to="/fisherman/user">
+                    {/* <Link to="/fisherman/user">
                         <div className='navbarItem'>
                             <img src={User}></img>
                         </div>
-                    </Link>
+                    </Link> */}
                 </div>
             </>
         )

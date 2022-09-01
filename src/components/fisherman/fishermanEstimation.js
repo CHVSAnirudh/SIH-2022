@@ -19,6 +19,7 @@ function FishermanEstimation() {
                 <td>S.No.</td>
                 <td>Predicted Species</td>
                 <td>Image</td>
+                <td>Count</td>
                 <td>Proportions</td>
                 <td>Estimated Weight</td>
               </thead>

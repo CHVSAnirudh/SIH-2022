@@ -29,9 +29,9 @@ def predict_image(image,weight):
                 if line[0] == '0':
                     catla+=1
                 elif line[0] == '1':
-                    mori+=1
-                else:
                     rohu+=1
+                else:
+                    mori+=1
     result = []
     catla = catla*1.2
     rohu = rohu*0.8

@@ -1,19 +1,23 @@
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
 
-
 .container{
     width:44vw;
     float: left;
     position: relative;
-    left: 6vw;
-    /* background-color: rgba(204, 204, 204, 0.2); */
+    left: 50vw;
+} 
+
+.fullContainer{
+    width:94vw;
+    position: absolute;
+    left:6vw;
 }
 
 .fixedDisplay{
     position: fixed;
-    left:50vw;
+    left:6vw;
     height:90vh;
-    width:50vw;
+    width:40vw;
     padding:5vh 2vw;
     background-color: white ;
 }
@@ -22,19 +26,48 @@
     width:50%;
     margin:40px auto 5px auto;
     display: flex;
+    background-color: #006e9d;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    position: relative;
     box-shadow:0px 1px 20px 5px rgba(0, 0, 0, 0.1);
 }
 
+.Gdropdown {
+    position: absolute;
+    /* background-color: rgba(0, 100, 143, 0.1); */
+    top:100%;
+    background-color: #ffffff;
+    flex-direction: column;
+    color: rgb(0, 100, 143);
+    width:90%;
+    margin:0 auto;
+    padding: 0 5%;
+    border-radius: 5px;
+    border: 1px dotted rgb(0, 100, 143);
+    /* background-color: red; */
+  }
+  
+  .Gdropdown:empty {
+    border: none;
+    
+  }
+  
+  .Gdropdown-row {
+    cursor: pointer;
+    text-align: start;
+    margin: 2px 0;
+    background-color: transparent;
+    color: rgb(0, 100, 143);
+  }
+
 input{
-    width:80%;
+    width:100%;
     padding:10px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
     background-color: #ffffff;
     border:transparent;
-    
 }
 
 input:focus{
@@ -296,23 +329,29 @@ select{
     font-size: 12px;
 }
 
-.fishesAndEndangered{
+/* .fishesAndEndangered{
     margin: 30px auto;
     width:70%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
+} */
 
-.fishDetails,
+/* .fishDetails, */
 .endangeredDetails{
     height: 20px;
     padding: 10px;
-    cursor: pointer;
-    /* background-color: rgb(0, 100, 143); */
+    /* cursor: pointer; */
+    width:23%;
+    text-align: center;
+    margin:5% auto;
+    /* background-color: rgb(71, 166, 206); */
     border: 1px solid rgb(0, 100, 143);
     /* color: #fff; */
+    /* margin-left:4rem; */
     border-radius: 5px;
     font-size: 14px;
+    background-color: rgba(0, 100, 143, 0.1);
+    color: rgb(0, 100, 143);
 }
 
 .fishDetails:hover,
@@ -376,4 +415,37 @@ select{
     /* background-color: rgba(255, 99, 132,0.2); */
 }
 
-/**/
+.GovtHead{
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    color:rgb(224, 138, 0) ;
+    /* font-style:bold */
+}
+
+.navLeg{
+    text-align: center;
+    font-size: 2rem;
+    margin:2%;
+}
+
+.imgText{
+    margin-left: 40%;
+}
+.imgText p{
+    display: inline-block;
+    margin-left: 4rem;
+    font-size:1.5rem;
+}
+.imgText img{
+    width:5%;
+}
+
+.WBHead{
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 6rem;
+    margin-bottom: 2rem;
+    color:rgb(52, 163, 0) ;
+}
